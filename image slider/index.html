@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image slider</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: 100vh;
+    }
+
+    .myDiv {
+        position: relative;
+    }
+
+    .bg {
+        opacity: 0.1;
+    }
+
+    .content {
+        position: absolute;
+        top: 380px;
+        left: 500px;
+        display: flex;
+
+    }
+</style>
+
+<body>
+
+    <div class="myDiv">
+        <img src="ynwa1.jpg" alt="" class="bg">
+        <h1>Image Slider</h1>
+        <div class="content">
+            
+            <button onclick="prev()">previous</button>
+            <img src="fc-liverpool.png" alt="" srcset="" height="400" width="600px" class="slider">
+            <button onclick="next()">next</button>
+            
+        </div>
+
+    </div>
+
+
+
+
+
+    <script>
+        var photos = ["fc-liverpool.png", "salah.jpg", "allison.jpg", "allison.jpg", "van dijk.jpg", "firmino.jpg", "arnold.jpg", "robertson.jpg"];
+        var image = document.getElementsByTagName("img")[1];
+
+        var count = 0;
+        function prev() {
+            count--;
+            if (count < 0) {
+                count = photos.length - 1;
+                image.src = photos[count];
+            }
+            else {
+                image.src = photos[count];
+            }
+        }
+
+
+        function next() {
+            count++;
+            if (count >= photos.length) {
+                count = 0;
+                image.src = photos[count];
+            }
+            else {
+                image.src = photos[count];
+            }
+
+        }
+    </script>
+</body>
+
+</html>
