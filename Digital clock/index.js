@@ -3,16 +3,19 @@ function Time(){
     var hrs = date.getHours();
     var min = date.getMinutes();
     var sec = date.getSeconds();
-    var session = document.getElementById('ampm');
+    var session1 = document.getElementById('ampm1');
+     var session2 = document.getElementById('ampm2');
 
     hrs = hrs < 10 ? "0" + hrs : hrs;
     min = min < 10 ? "0" + min : min;
     sec = sec < 10 ? "0" + sec : sec;
 
     if(hrs >= 12){
-        session.innerHTML = 'PM';
+        session1.innerHTML = 'PM';
+        session2.innerHTML = 'PM';
     }else{
-        session.innerHTML = 'AM';
+        session1.innerHTML = 'AM';
+        session2.innerHTML = 'AM';
     }
 
     if(hrs > 12){
